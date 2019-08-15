@@ -19,6 +19,9 @@ export const SET_FOCUS_EDITOR = 'SET_FOCUS_EDITOR';
 // Action creators
 
 export const setNotes = (notes: INote[]) => action(SET_NOTES, notes);
+/**
+ * Get saved notes from the client side db, overwrite the notes in state.
+ */
 export const loadNotesAsync = (): ThunkAction<void, IState, MoncalaDb, Action> => async (
   dispatch,
   _,
@@ -29,6 +32,10 @@ export const loadNotesAsync = (): ThunkAction<void, IState, MoncalaDb, Action> =
 };
 
 export const addNote = (note: INote) => action(ADD_NOTE, note);
+/**
+ * Add a note to the state and the db. We always add an empty note.
+ * If we add a note, focus the editor and set the active Id to this notes id
+ */
 export const addNoteAsync = (): ThunkAction<void, IState, MoncalaDb, Action> => async (
   dispatch,
   _,
@@ -47,6 +54,11 @@ export const addNoteAsync = (): ThunkAction<void, IState, MoncalaDb, Action> => 
 
 export const updateNote = (noteId: number, note: Partial<INote>) =>
   action(UPDATE_NOTE, { id: noteId, note });
+/**
+ * Update a note's content in state and db (modified dates are handled here)
+ * @param noteId the note id to change
+ * @param content the content to overwrite it with
+ */
 export const updateNoteAsync = (
   noteId: number,
   content: string
@@ -61,6 +73,11 @@ export const updateNoteAsync = (
 };
 
 export const deleteNote = (noteId: number) => action(DELETE_NOTE, noteId);
+/**
+ * Delete the note from state and db. If it is active, set active id to null.
+ * @param noteId the id of the note to delete
+ * @param activeId the current active id
+ */
 export const deleteNoteAsync = (
   noteId: number,
   activeId: number | undefined
@@ -74,7 +91,15 @@ export const deleteNoteAsync = (
 };
 
 export const setEditorState = (editorState: EditorState) => action(SET_EDITOR_STATE, editorState);
+/**
+ * Manage the editor's content by specifying the active note id here.
+ * @param noteId the id of the active note
+ */
 export const setActiveId = (noteId: number | undefined) => action(SET_ACTIVE_ID, noteId);
+/**
+ * set to true to focus the editor, the editor sets it to false once it focuses
+ * @param flag true or false
+ */
 export const setFocusEditor = (flag: boolean) => action(SET_FOCUS_EDITOR, flag);
 
 export type Action =
