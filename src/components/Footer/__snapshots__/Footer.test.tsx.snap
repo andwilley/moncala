@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer> test a basic render output should render the notepad 1`] = `
+<div
+  className="Footer h2"
+>
+  <p
+    className="mt2 f7 fr"
+  >
+    Created By: Drew Willey. For: Mon Cala Project Application.
+  </p>
+</div>
+`;

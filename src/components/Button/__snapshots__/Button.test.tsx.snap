@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button> test a basic render output should render the notepad 1`] = `
+<button
+  className="bn bg-transparent pr2 dim f6 gray ba b--moon-gray pointer br2 "
+  disabled={false}
+  type="button"
+>
+  Child
+</button>
+`;

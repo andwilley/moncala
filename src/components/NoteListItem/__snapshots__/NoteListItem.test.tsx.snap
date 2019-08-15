@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NoteListItem> test a basic render output should render the notepad active 1`] = `
+<li
+  className="relative bb br1 ph2 b--light-gray pv2 hide-child dim pointer bg-lightest-blue"
+  onClick={[Function]}
+  style={
+    Object {
+      "minHeight": "2rem",
+    }
+  }
+>
+  <p
+    className="ma0 truncate f6 b"
+  >
+    test
+  </p>
+  <p
+    className="mt1 mb0 truncate f6 fw5"
+  >
+    
+  </p>
+  <span
+    className="absolute"
+    onClick={[Function]}
+    style={
+      Object {
+        "right": 0,
+        "top": ".3rem",
+      }
+    }
+  >
+    <span
+      className="child"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        height={20}
+        style={
+          Object {
+            "fill": "black",
+          }
+        }
+        viewBox="0 0 24 24"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+        />
+      </svg>
+    </span>
+  </span>
+</li>
+`;
+
+exports[`<NoteListItem> test a basic render output should render the notepad inactive 1`] = `
+<li
+  className="relative bb br1 ph2 b--light-gray pv2 hide-child dim pointer "
+  onClick={[Function]}
+  style={
+    Object {
+      "minHeight": "2rem",
+    }
+  }
+>
+  <p
+    className="ma0 truncate f6 b"
+  >
+    test
+  </p>
+  <p
+    className="mt1 mb0 truncate f6 fw5"
+  >
+    
+  </p>
+  <span
+    className="absolute"
+    onClick={[Function]}
+    style={
+      Object {
+        "right": 0,
+        "top": ".3rem",
+      }
+    }
+  >
+    <span
+      className="child"
+      onClick={[Function]}
+    >
+      <svg
+        className=""
+        height={20}
+        style={
+          Object {
+            "fill": "black",
+          }
+        }
+        viewBox="0 0 24 24"
+        width={20}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
+        />
+      </svg>
+    </span>
+  </span>
+</li>
+`;
