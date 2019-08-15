@@ -9,6 +9,7 @@ exports[`<NoteListItem> test a basic render output should render the notepad act
       "minHeight": "2rem",
     }
   }
+  title="NoteItem"
 >
   <p
     className="ma0 truncate f6 b"
@@ -64,6 +65,7 @@ exports[`<NoteListItem> test a basic render output should render the notepad ina
       "minHeight": "2rem",
     }
   }
+  title="NoteItem"
 >
   <p
     className="ma0 truncate f6 b"

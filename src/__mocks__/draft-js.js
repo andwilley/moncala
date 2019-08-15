@@ -15,5 +15,5 @@ export const EditorState = {
 }
 
 export const ContentState = {
-  createFromText: () => 'test'
+  createFromText: text => text
 }

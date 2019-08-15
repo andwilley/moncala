@@ -1,6 +1,11 @@
 import Dexie from 'dexie';
 import { INote } from '../api/models';
 
+/**
+ * indexeddb is a more flexible version of localstorage for offline state management. The only other
+ * option is the filesystem API, which is not recommended by MDN.
+ * Dexie is a wrapper around indexeddb operations, allowing declarative interaction with the store.
+ */
 export class MoncalaDb extends Dexie {
   notes: Dexie.Table<INote, number>;
 

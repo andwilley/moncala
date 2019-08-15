@@ -1,5 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<SideBar> test a basic render output should call dispatch on note click 1`] = `
+<div
+  className="Sidebar dib w5 h-100 ph2 overflow-y-auto"
+>
+  <ul
+    className="NotesList list pl0 mt0"
+  >
+    0
+  </ul>
+</div>
+`;
+
 exports[`<SideBar> test a basic render output should render the sidebar 1`] = `
 <div
   className="Sidebar dib w5 h-100 ph2 overflow-y-auto"

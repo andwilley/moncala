@@ -12,6 +12,12 @@ import { IState } from '../types/IState';
 import { initialState } from '../initialState/initialState';
 import { INote } from '../api/models';
 
+/*
+ *
+ * Reducer
+ *
+ */
+
 const reducer = (state: IState | undefined = initialState, action: Action): IState => {
   switch (action.type) {
     case SET_NOTES:
