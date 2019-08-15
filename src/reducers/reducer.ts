@@ -1,4 +1,13 @@
-import { ADD_NOTE, UPDATE_NOTE, Action, SET_NOTES } from '../actions/actions';
+import {
+  ADD_NOTE,
+  UPDATE_NOTE,
+  Action,
+  SET_NOTES,
+  SET_EDITOR_STATE,
+  SET_ACTIVE_ID,
+  SET_FOCUS_EDITOR,
+  DELETE_NOTE
+} from '../actions/actions';
 import { IState } from '../types/IState';
 import { initialState } from '../initialState/initialState';
 import { INote } from '../api/models';
@@ -50,6 +59,30 @@ const reducer = (state: IState | undefined = initialState, action: Action): ISta
           }
         }
       };
+    case DELETE_NOTE:
+      const { [action.payload]: del, ...rest } = state.notes.byId;
+      return {
+        ...state,
+        notes: {
+          byId: rest,
+          allIds: state.notes.allIds.filter(noteId => noteId !== action.payload)
+        }
+      };
+    case SET_EDITOR_STATE:
+      return {
+        ...state,
+        editorState: action.payload
+      };
+    case SET_ACTIVE_ID:
+      return {
+        ...state,
+        activeId: action.payload
+      };
+    case SET_FOCUS_EDITOR:
+      return {
+        ...state,
+        focusEditor: action.payload
+      };
     default:
       return state;
   }
@@ -67,3 +100,6 @@ export const getNoteIds = (state: IState) => state.notes.allIds;
 export const getNotesById = (state: IState) => state.notes.byId;
 export const getNotes = (state: IState) =>
   getNoteIds(state).map(noteId => getNotesById(state)[noteId]);
+export const getActiveId = (state: IState) => state.activeId;
+export const getEditorState = (state: IState) => state.editorState;
+export const getFocusEditor = (state: IState) => state.focusEditor;
