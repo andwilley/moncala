@@ -1,8 +1,8 @@
 import React from 'react';
-import { Note } from '../../api/models';
+import { INote } from '../../api/models';
 
 export interface INoteListItemProps {
-  note: Note;
+  note: INote;
 }
 
 export const NoteListItem: React.FC<INoteListItemProps> = ({ note }) => {

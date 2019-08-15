@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addNote } from '../../actions/actions';
+import { addNoteAsync } from '../../actions/actions';
+import { ContentState, convertToRaw } from 'draft-js';
 
 export const Header: React.FC = () => {
   const dispatch = useDispatch();
@@ -9,7 +10,12 @@ export const Header: React.FC = () => {
       <div className="dib">
         <h2 className="ma0 b">Of Note</h2>
       </div>
-      <div className="dib fr h2 w2 mr2 ba" onClick={() => dispatch(addNote(''))}>
+      <div
+        className="dib fr h2 w2 mr2 ba"
+        onClick={() =>
+          dispatch(addNoteAsync(JSON.stringify(convertToRaw(ContentState.createFromText('')))))
+        }
+      >
         add
       </div>
     </div>

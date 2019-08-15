@@ -1,10 +1,10 @@
-import { Note } from '../api/models';
+import { INote } from '../api/models';
 
 export interface IEntity<E> {
   byId: { [key: string]: E };
-  allIds: ReadonlyArray<string>;
+  allIds: ReadonlyArray<number>;
 }
 
 export interface IState {
-  notes: IEntity<Note>;
+  notes: IEntity<INote>;
 }

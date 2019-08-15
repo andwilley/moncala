@@ -1,27 +1,41 @@
-import { ADD_NOTE, UPDATE_NOTE, Action } from '../actions/actions';
+import { ADD_NOTE, UPDATE_NOTE, Action, SET_NOTES } from '../actions/actions';
 import { IState } from '../types/IState';
-import day from 'dayjs';
 import { initialState } from '../initialState/initialState';
+import { INote } from '../api/models';
 
 const reducer = (state: IState | undefined = initialState, action: Action): IState => {
   switch (action.type) {
-    case ADD_NOTE:
+    case SET_NOTES:
+      const newNotesById = action.payload.reduce((acc, note) => {
+        return note.id
+          ? {
+              ...acc,
+              [note.id]: note
+            }
+          : acc;
+      }, {});
+
       return {
         ...state,
         notes: {
-          ...state.notes,
-          byId: {
-            ...state.notes.byId,
-            [action.payload.id]: {
-              id: action.payload.id,
-              dateCreated: day().toISOString(),
-              dateModified: day().toISOString(),
-              content: action.payload.content
-            }
-          },
-          allIds: state.notes.allIds.concat(action.payload.id)
+          byId: newNotesById,
+          allIds: (action.payload.filter(note => note.id) as Required<INote>[]).map(note => note.id)
         }
       };
+    case ADD_NOTE:
+      return action.payload.id
+        ? {
+            ...state,
+            notes: {
+              ...state.notes,
+              byId: {
+                ...state.notes.byId,
+                [action.payload.id]: action.payload
+              },
+              allIds: state.notes.allIds.concat(action.payload.id)
+            }
+          }
+        : state;
     case UPDATE_NOTE:
       return {
         ...state,
@@ -31,7 +45,7 @@ const reducer = (state: IState | undefined = initialState, action: Action): ISta
             ...state.notes.byId,
             [action.payload.id]: {
               ...state.notes.byId[action.payload.id],
-              ...action.payload
+              ...action.payload.note
             }
           }
         }
