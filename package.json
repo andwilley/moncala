@@ -20,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sonar:local": "sonar-scanner -Dsonar.host.url=http://localhost:9000/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -67,6 +68,7 @@
     "@types/react-redux": "^7.1.1",
     "@types/react-test-renderer": "^16.9.0",
     "@types/uuid": "^3.4.5",
-    "react-test-renderer": "^16.9.0"
+    "react-test-renderer": "^16.9.0",
+    "sonar-scanner": "^3.1.0"
   }
 }
