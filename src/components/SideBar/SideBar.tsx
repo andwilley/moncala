@@ -14,7 +14,6 @@ export const SideBar: React.FC = () => {
   const notes = useSelector(getNotes);
   const activeId = useSelector(getActiveId);
   const dispatch = useDispatch();
-
   const onNoteClick = (noteId: number, content: string) => (e: React.MouseEvent) => {
     dispatch(setEditorState(EditorState.createWithContent(ContentState.createFromText(content))));
     dispatch(setActiveId(noteId));

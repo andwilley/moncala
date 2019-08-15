@@ -22,6 +22,7 @@ export const NoteListItem: React.FC<INoteListItemProps> = ({
   return (
     <li
       onClick={onClick}
+      title="NoteItem"
       style={{ minHeight: '2rem' }}
       className={`relative bb br1 ph2 b--light-gray pv2 hide-child dim pointer ${
         isActive ? 'bg-lightest-blue' : ''

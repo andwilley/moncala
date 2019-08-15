@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Header> test a basic render output should render the notepad 1`] = `
+<div
+  className="Header h3 pt2 pl2"
+>
+  <div
+    className="dib w5"
+  >
+    <h2
+      className="ma0 b"
+    >
+      Of Note
+    </h2>
+  </div>
+  <button
+    className="ba bg-transparent pr2 dim f6 gray ba b--moon-gray pointer br2 "
+    disabled={false}
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      className="flex items-center"
+    >
+      <span
+        className="dib h2 w2 pointer"
+        onClick={[Function]}
+      >
+        <svg
+          className=""
+          height={30}
+          style={
+            Object {
+              "fill": "#555555",
+            }
+          }
+          viewBox="0 0 24 24"
+          width={30}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+          />
+        </svg>
+      </span>
+      New Note
+    </span>
+  </button>
+</div>
+`;

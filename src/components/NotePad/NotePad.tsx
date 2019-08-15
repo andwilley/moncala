@@ -42,7 +42,8 @@ export const NotePad: React.FC = () => {
 
   return (
     <div
-      className="Notes dib w-100 pa3 bl b--near-white br3 br--left shadow-1"
+      title="NotePad"
+      className="NotePad dib w-100 pa3 bl b--near-white br3 br--left shadow-1"
       onClick={onEditAreaClick}
     >
       <Editor editorState={editorState} onChange={onEditorChange} ref={editorRef} />

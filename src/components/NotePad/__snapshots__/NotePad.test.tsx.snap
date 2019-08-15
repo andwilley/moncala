@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<NotePad> test a render output should render the notepad 1`] = `
+<div
+  className="NotePad dib w-100 pa3 bl b--near-white br3 br--left shadow-1"
+  onClick={[Function]}
+  title="NotePad"
+/>
+`;

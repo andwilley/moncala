@@ -6,6 +6,9 @@ export interface IEntity<E> {
   allIds: ReadonlyArray<number>;
 }
 
+/**
+ * The shape of the app's redux state. Notes are also synced with the indexeddb API.
+ */
 export interface IState {
   notes: IEntity<INote>;
   activeId: number | undefined;

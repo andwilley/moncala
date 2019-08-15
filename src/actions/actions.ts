@@ -19,7 +19,7 @@ export const SET_FOCUS_EDITOR = 'SET_FOCUS_EDITOR';
 // Action creators
 
 export const setNotes = (notes: INote[]) => action(SET_NOTES, notes);
-export const loadNotes = (): ThunkAction<void, IState, MoncalaDb, Action> => async (
+export const loadNotesAsync = (): ThunkAction<void, IState, MoncalaDb, Action> => async (
   dispatch,
   _,
   db
