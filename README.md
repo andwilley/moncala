@@ -20,6 +20,7 @@ This app only has one model: Note. We keep content, an id, and some meta.
 - Jest. Currently the app is above 80% coverage globally. There are components that dip below that. Unit tests will fail if coverage falls below 80%.
 - Typescript. I find it very useful to have static type checking, especially during refactoring.
 - Dayjs. This is a functional (immutable) version of the popular moment library. This avoids some of the weird bugs and pitfalls of working with mutable moments.
+- Sonar: A rating at default settings.
 
 ## Future Improvements
 
