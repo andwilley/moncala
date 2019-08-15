@@ -14,12 +14,22 @@ export const SideBar: React.FC = () => {
   const notes = useSelector(getNotes);
   const activeId = useSelector(getActiveId);
   const dispatch = useDispatch();
+
+  /**
+   * Set the active note to this one, set the editor state and active note id, then focus the editor
+   * @param noteId the id of the note to activate
+   * @param content the content of this note
+   */
   const onNoteClick = (noteId: number, content: string) => (e: React.MouseEvent) => {
     dispatch(setEditorState(EditorState.createWithContent(ContentState.createFromText(content))));
     dispatch(setActiveId(noteId));
     dispatch(setFocusEditor(true));
   };
 
+  /**
+   * handle deleting a note. stopProp because onclick on the parent activates this note in the editor.
+   * @param noteId the id to delete
+   */
   const onNoteDelete = (noteId: number) => (e: React.MouseEvent) => {
     e.stopPropagation();
     dispatch(deleteNoteAsync(noteId, activeId));

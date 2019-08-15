@@ -14,6 +14,15 @@ A simple app to help you remember things.
 
 This app only has one model: Note. We keep content, an id, and some meta.
 
+### Basic organization
+
+- All components are in src/components
+- initialState is the original value of the app state, before we hydrate with clientside storage
+- IState is the type that corresponds to this
+- one reducer handles all actions on state
+- all actions are in src/actions/actions
+- Async actions operatate on the indexeddb as well as syncronize out state.
+
 ## Other tools
 
 - Draftjs. Also overkill for this app. If I had more time though, I would have implemented rich text editing for notes. This is easy to add to Draftjs and would not be hard to add to the state management. The only possibly tricky part would be how often we serialize it to save it locally, which could be expensive.
