@@ -32,8 +32,10 @@ describe('<NotePad> test a render output', () => {
       </Provider>
     );
     const inst = comp.root;
-    inst.findByType(Editor).props.onChange(EditorState);
-    expect(store.dispatch).toHaveBeenCalledWith(setEditorState(EditorState));
+    const emptyState = EditorState.createEmpty();
+    const element = inst.findByType(Editor);
+    element.props.onChange(emptyState);
+    expect(store.dispatch).toHaveBeenCalledWith(setEditorState(emptyState));
     expect(store.dispatch).toHaveBeenCalledTimes(1);
   });
 
@@ -47,7 +49,7 @@ describe('<NotePad> test a render output', () => {
       </Provider>
     );
     const inst = comp.root;
-    inst.findByType(Editor).props.onChange(EditorState);
+    inst.findByType(Editor).props.onChange(EditorState.createEmpty());
     expect(store.dispatch).toHaveBeenCalledTimes(2);
   });
 

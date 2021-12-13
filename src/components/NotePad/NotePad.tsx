@@ -16,6 +16,7 @@ export const NotePad: React.FC = () => {
   const dispatch = useDispatch();
   const editorRef = useRef<Editor>(null);
 
+  // syncronize this component with the active id
   useEffect(() => {
     if (focusEditor && editorRef && editorRef.current) {
       editorRef.current.focus();
@@ -23,6 +24,10 @@ export const NotePad: React.FC = () => {
     }
   }, [activeId, focusEditor, dispatch]);
 
+  /**
+   * On click in the surrounding div, focus the editor
+   * If no note is active, add a new note
+   */
   const onEditAreaClick = (e: React.MouseEvent) => {
     if (editorRef && editorRef.current) {
       editorRef.current.focus();
@@ -32,6 +37,10 @@ export const NotePad: React.FC = () => {
     }
   };
 
+  /**
+   * manage controlled component editor
+   * @param editState the draft editor state
+   */
   const onEditorChange = (editState: EditorState) => {
     dispatch(setEditorState(editState));
     const text = editState.getCurrentContent().getPlainText();
